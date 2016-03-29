@@ -1,0 +1,135 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='')  
+//if IE 8
+  html.no-js.lt-ie9(lang='')  
+// [if gt IE 8] <!
+html.no-js(lang='')
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title [INSERT SITE TITLE HERE]
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='[ENTER SITE DESCRIPTION HERE]')
+    meta(name='author', content='[ENTER AUTHOR INFO HERE]')
+    link(rel='apple-touch-icon', href='[INSERT apple-tuch-icon.png]')
+    link(rel="stylesheet", href="/css/styles.css")
+    link(href='https://fonts.googleapis.com/css?family=Kaushan+Script|Hind+Vadodara:400,500,600', rel='stylesheet', type='text/css')
+    // script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  body
+    //if IE
+      script(src='https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js')
+    // Start coding here
+    a.hamburger.pull-right
+        span.name
+            span Hello
+            i.fa.fa-bars.fa-2x.pull-right
+    .main
+        .main-nav-wrap
+            a.close
+                i.fa.fa-times.fa-2x
+            .row
+                .main-nav
+                    .header
+                        h2.text-center.text-invert Can I Help
+                        h5.text-center.text-muted find what you're looking for?
+                    ul.nav.nav-pills.nav-stacked
+                      li.active
+                        a(href='#') Home
+                      li
+                        a(href='#') Link
+        section.page-1
+            .jumbotron.herotron
+                .container-fluid
+                    .row-spacer
+                        .col-md-12.col-lg-12
+                            h2.text-center
+                                i.awesome.a-glasses.awesome-2x
+                                span.headline-text Party Time!
+                                span.headline-text
+                                    small All the Time
+        section.page-2
+            .container
+                .middle-align
+                    .row
+                        .col-md-12
+                            a.btn.btn-warning.btn-block See Some Stuff
+                            p.top-padding.text-shadow.lead At nos hinc posthac, sitientis piros Afros. Integer legentibus erat a ante historiarum dapibus. Mercedem aut nummos unde unde extricat, amaras. Contra legem facit qui id facit quod lex prohibet. Nec dubitamus multa iter quae et nos invenerat. Ut enim ad minim veniam, quis nostrud exercitation.
+                            p.text-shadow.lead Petierunt uti sibi concilium totius Galliae in diem certam indicere. Tityre, tu patulae recubans sub tegmine fagi  dolor. Idque Caesaris facere voluntate liceret: sese habere.
+
+        section.page-3
+            .jumbotron.herotron.gray
+                .container
+                    .row-spacer
+                        .col-md-12.col-lg-12.top-padding
+                            .row
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                                    a.btn.btn-block.btn-default(href="#") Default
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                                    a.btn.btn-block.btn-primary(href="#") Primary
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                                    a.btn.btn-block.btn-success(href="#") Success
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                                    a.btn.btn-block.btn-info(href="#") Info
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2    
+                                    a.btn.btn-block.btn-warning(href="#") Warning
+                                .col-xs-2.col-sm-2.col-md-2.col-lg-2    
+                                    a.btn.btn-block.btn-danger(href="#")  Danger
+
+                            .row-spacer
+                                .col-xs-12.col-sm-12.col-md-12.col-lg-12
+                                    h3.text-primary-dark Color Palette
+
+                            .row-spacer
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-primary
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-primary-light
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-primary-dark
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-primary-faded
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                            .row-spacer
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-variant
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3(data-badass="badass")
+                                    .party.bg-variant-light
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-variant-dark
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-variant-faded
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                            .row-spacer
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-corner
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-corner-light
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-corner-dark
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+                                .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                                    .party.bg-corner-faded
+                                        p.text-center Magna pars studiorum, prodita quaerimus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+
+
+            
+        
+    // Coding End
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='/vendor/jqueryUI/jquery-ui.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    script(src='/js/main.js')
+

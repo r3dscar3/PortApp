@@ -1,0 +1,546 @@
+@import "../../vendorLess/bootstrap-3.3.6/bootstrap.less";
+@import "../../vendorLess/font-awesome/font-awesome.less";
+@import "variables.less";
+@import "mixins.less";
+@import "theme.less";
+body {
+    overflow: hidden;
+}
+
+
+/* Preloader */
+
+.start-button-wrap {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    & #preloader {
+        position: absolute;
+        background-color: #333;
+        z-index: 9999;
+        width: 100%;
+        height: 50px;
+        & #status {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            color: #fff;
+            top: 0;
+        }
+    }
+    & .startButton {
+        position: absolute;
+        top: 0;
+        height: 50px;
+        width: 100%;
+    }
+}
+
+.animate {
+    .transitions(opacity 1s);
+    &.fadeIn {
+        opacity: 1;
+    }
+    &.fadeOut {
+        opacity: 0;
+    }
+}
+
+.middle-align-table {
+    display: table;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 15px;
+}
+
+.header {
+    position: relative;
+    width: 250px;
+    padding: 10px 5px;
+    margin: -15px auto 15px;
+    background: #333;
+}
+
+.header:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #333;
+    border-right: 125px solid transparent;
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #333;
+    border-left: 125px solid transparent;
+}
+
+.header h2,
+.header h5 {
+    margin: 0;
+}
+
+.text-primary-light {
+    color: @primaryLight;
+}
+
+.text-variant-dark {
+    color: @variantDark;
+}
+
+.text-primary-dark {
+    color: @primaryDark;
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.herotron {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: table;
+    background-color: #333;
+    background-size: cover;
+    box-shadow: inset 0 0 0 30px @body-bg;
+    -moz-box-shadow: inset 0 0 0 30px @body-bg;
+    -webkit-box-shadow: inset 0 0 0 30px @body-bg;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.herotron h1,
+.herotron h2,
+.herotron h3,
+.herotron h4,
+.herotron h5,
+.herotron h6 {
+    font-size: @jumbotron-heading-font-size;
+    .text-shadow-invert;
+    line-height: .8em;
+}
+
+.brander {
+    width: 250px;
+    top: 25px;
+    left: 50%;
+    margin-left: -125px;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    & h5 {
+        & span {
+            position: relative;
+            top: -13px;
+        }
+    }
+}
+
+#mainCarousel {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px;
+    & .item {
+        width: 100%;
+        overflow: hidden;
+        & .outer-pad-wrap {
+            position: absolute;
+            //            height: 400px;
+            width: 400px;
+            & .carousel-caption {
+                position: relative;
+                //                height: 400px;
+                width: 400px;
+                top: 0;
+                left: 0;
+                padding: 20px;
+                color: @text-color;
+                .text-shadow;
+                transition-delay: 2s;
+                & .caption-wraption {
+                    margin: auto;
+                    text-align: left;
+                    border: 1px solid fade(@text-color, 20%);
+                    padding: 40px;
+                    > h3 {
+                        margin-top: 0;
+                    }
+                    > h4 {
+                        font-family: @font-family-sans-serif;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+        & img {
+            position: absolute;
+            max-width: inherit;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.middle-align {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.headline-text {
+    display: block;
+    > small {
+        font-family: @font-family-sans-serif;
+        font-size: @jumbotron-heading-font-size *.4;
+    }
+}
+
+.big-glasses {
+    width: 80%;
+    max-width: 500px;
+}
+
+.small-glasses {
+    width: 30%;
+    height: auto;
+}
+
+.name {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.name span {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+}
+
+.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 99;
+    background-color: fade(@brand-info, 90%);
+    .shape-square(110px);
+    opacity: 1;
+    .text-shadow;
+    &.pull-right {
+        left: auto;
+        right: 15px;
+        background-color: fade(@brand-primary, 90%);
+        .shape-square(90px);
+    }
+}
+
+.info-wrap {
+    background: @brand-primary;
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 10000000000;
+    overflow-y: scroll;
+    .text-shadow;
+    & .info-content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.profile-pic {
+    .square(150px);
+    position: absolute;
+    right: -100px;
+    top: -110px;
+}
+
+.skillset li {
+    border: 1px solid fade(@text-color, 20%);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 14px;
+}
+
+.contactMe {
+    cursor: pointer;
+}
+
+.theContacter {
+    background: @brand-info;
+    width: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    .text-shadow;
+    z-index: 10000000001;
+    overflow-y: scroll;
+}
+
+.contact-form {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.info-wrap a.close.righty {
+    right: 15px;
+    left: auto;
+}
+
+.info-wrap a.close.lefty {
+    right: auto;
+    left: 15px;
+}
+
+.main-nav {
+    width: 280px;
+    padding: 15px;
+}
+
+.main-nav h2 {
+    margin-bottom: 0;
+}
+
+.main-nav h4 {
+    margin-top: 0;
+}
+
+.space {
+    margin-bottom: 30px;
+}
+
+.party {
+    min-height: 50px;
+    padding: 10px;
+    .border-radius;
+}
+
+.top-padding {
+    padding-top: 15px;
+}
+
+.bg-primary {
+    background-color: @primary;
+    .text-shadow-invert;
+}
+
+.bg-primary-light {
+    background-color: @primaryLight;
+    .text-shadow;
+}
+
+.bg-primary-dark {
+    background-color: @primaryDark;
+    .text-shadow-invert;
+    .text-invert;
+}
+
+.bg-primary-faded {
+    background-color: @primaryFaded;
+    .text-faded;
+    .text-shadow;
+}
+
+.bg-variant {
+    background-color: @variant;
+    .text-shadow-invert;
+    .text-invert;
+}
+
+.bg-variant-light {
+    background-color: @variantLight;
+    .text-shadow;
+}
+
+.bg-variant-dark {
+    background-color: @variantDark;
+    .text-shadow-invert;
+    .text-invert;
+}
+
+.bg-variant-faded {
+    background-color: @variantFaded;
+    .text-faded;
+    .text-shadow;
+}
+
+.bg-corner {
+    background-color: @corner;
+    .text-shadow-invert;
+    .text-invert;
+}
+
+.bg-corner-light {
+    background-color: @cornerLight;
+    .text-shadow;
+}
+
+.bg-corner-dark {
+    background-color: @cornerDark;
+    .text-shadow-invert;
+    .text-invert;
+}
+
+.bg-corner-faded {
+    background-color: @cornerFaded;
+    .text-faded;
+    .text-shadow;
+}
+
+section.page-2 {
+    display: table;
+    width: 100%;
+}
+
+section.page-2 .middle-align {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.btn {
+    .text-shadow-invert;
+    font-weight: @font-weight;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+
+.btn-default {
+    .text-shadow
+}
+
+.no-topper {
+    .topper(0);
+}
+
+button.close {
+    float: right;
+    &:hover {
+        color: inherit;
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-pic {
+        top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    #mainCarousel {
+        & .item {
+            & .outer-pad-wrap {
+                bottom: 0;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                right: 0;
+                & .carousel-caption {
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: table;
+                    & .caption-wraption {
+                        padding: 30px;
+                        width: 100%;
+                        height: 100%;
+                        display: table-cell;
+                    }
+                }
+            }
+            & img {}
+        }
+    }
+    .herotron {}
+    .brander {
+        top: 0;
+    }
+    .profile-pic {
+        position: relative;
+        right: inherit;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media (max-width: 465px) {
+    .hamburger {
+        top: 10px;
+        left: 10px;
+        line-height: 1em;
+        .square(56px);
+        &.pull-right {
+            top: 10px;
+            right: 10px;
+            .square(56px);
+            line-height: 1em;
+        }
+    }
+    .herotron h1,
+    .herotron h2,
+    .herotron h3,
+    .herotron h4,
+    .herotron h5,
+    .herotron h6 {
+        font-size: (@jumbotron-heading-font-size * .6);
+    }
+    .herotron {
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    #mainCarousel {
+        padding: 0;
+        & .item {
+            & .outer-pad-wrap {
+                height: 70%;
+                & .carousel-caption {
+                    & .caption-wraption {
+                        padding: 15px;
+                    }
+                }
+            }
+            & img {}
+        }
+    }
+    .profile-pic {
+        position: relative;
+        right: inherit;
+        display: block;
+        margin: auto;
+        top: auto;
+    }
+    .bordered {
+        padding: 10px;
+    }
+}

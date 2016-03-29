@@ -1,0 +1,221 @@
+// main: styles.less
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: @font-family-serif;
+}
+
+.text-invert {
+    color: @body-bg;
+}
+
+.text-shadow {
+    text-shadow: 0 1px 0 @shadow-highlight;
+    -moz-text-shadow: 0 1px 0 @shadow-highlight;
+    -webkit-text-shadow: 0 1px 0 @shadow-highlight;
+}
+
+.text-shadow-invert {
+    text-shadow: 0 -1px 0 @shadow-highlight-invert;
+    -moz-text-shadow: 0 -1px 0 @shadow-highlight-invert;
+    -webkit-text-shadow: 0 -1px 0 @shadow-highlight-invert;
+}
+
+.text-faded {
+    color: lighten(@gray-light, 10%);
+}
+
+.row-spacer {
+    .row;
+    margin-bottom: 30px;
+}
+
+.border-radius-alt(@tl: 4;  @tr: 4; @br: 4; @bl: 4) {
+    border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    -webkit-border-radius: @arguments;
+}
+
+.border-radius() {
+    border-radius: @border-radius-base;
+    -moz-border-radius: @border-radius-base;
+    -webkit-border-radius: @border-radius-base;
+}
+
+.highlight(@backgroundColor, @textColor) {
+    ::selection,
+    -moz::selection {
+        background: @backgroundColor;
+        color: @textColor;
+    }
+}
+
+.background-cover(@cover: cover) {
+    -webkit-background-size: @cover;
+    -moz-background-size: @cover;
+    -o-background-size: @cover;
+    background-size: @cover;
+}
+
+.bg-padding {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.main-nav .nav-pills {
+    > li {
+        > a {
+            color: @main-menu-links;
+            &:hover,
+            &:focus {
+                color: @main-menu-links;
+                background-color: fade(#000000, 20%);
+            }
+        }
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @main-menu-links;
+                background-color: fade(#000000, 20%);
+            }
+        }
+    }
+}
+
+.close {
+    float: none;
+    position: absolute;
+    top: 15px;
+    font-size: 1em;
+    z-index: 10001;
+}
+
+.hamburger {
+    .close;
+    font-size: 1em;
+    font-family: @font-family-serif;
+}
+
+.gray.herotron {
+    background-color: @gray-lighter;
+    color: @text-color;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    & p {
+        font-size: @font-size-base;
+        font-weight: @font-weight;
+    }
+    & h1 {
+        font-size: @font-size-h1;
+    }
+    & h2 {
+        font-size: @font-size-h2;
+    }
+    & h3 {
+        font-size: @font-size-h3;
+    }
+    & h4 {
+        font-size: @font-size-h4;
+    }
+    & h5 {
+        font-size: @font-size-h5;
+    }
+    & h6 {
+        font-size: @font-size-h6;
+    }
+}
+
+.nav {
+    font-weight: @font-weight;
+    & a {
+        .text-shadow-invert;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+    }
+}
+.shape-rectangle(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.shape-square(@width) {
+    .shape-rectangle(@width, @width);
+    line-height: @width;
+}
+
+.circle(@radius: 50%) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    > span {
+        display: block;
+        text-align: center;
+    }
+}
+.transitions(@typeSpeed) {
+    transition: @typeSpeed;
+    -moz-transition: @typeSpeed;
+    -webkit-transition: @typeSpeed;
+}
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
+.topper(@topper) {
+    margin-top: @topper;
+}
+
+.bordered {
+    border: 1px solid fade(@text-color, 20%);
+    padding: 40px;
+    .topper(10px);
+    position: relative;
+}
+.btn-outline {
+    background-color: transparent;
+    border-color: @text-color;
+    color: @text-color;
+    .text-shadow !important;
+}
+.btn-outline-invert {
+    background-color: transparent;
+    border-color: @body-bg;
+    color: @body-bg;
+    .text-shadow-invert !important;
+}
+.btn {
+    text-transform: uppercase;
+}

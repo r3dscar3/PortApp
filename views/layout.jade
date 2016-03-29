@@ -1,0 +1,49 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='')  
+//if IE 8
+  html.no-js.lt-ie9(lang='')  
+// [if gt IE 8] <!
+html.no-js(lang='')
+    // <![endif]
+    include ./inc/global-head.jade
+    body
+        //if IE
+        script(src='https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js')
+        script(src='https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js')
+        //Preloader     
+        .jumbotron.herotron.introduction.animate.fadeIn
+            .middle-align
+                .row-spacer
+                    .col-md-6.col-md-push-3
+                        if(typeof msg !== 'undefined')
+                          if(!!err)
+                            .alert.alert-danger.alert-dismissible(role="alert")
+                                button(type="button" data-dismiss="alert" aria-label="Close").close
+                                    span(aria-hidden="true") x
+                                span(class='msgbox err') #{msg}
+                          else
+                            .alert.alert-success.alert-dismissible(role="alert")
+                                button(type="button" data-dismiss="alert" aria-label="Close").close
+                                    span(aria-hidden="true") 
+                                span(class='msgbox success') #{msg}
+                    .col-md-12.col-lg-12
+                        h2.text-center
+                            img(src="/images/glasses.svg").center-block.big-glasses
+                            span.headline-text Nolan Thompson
+                            span.headline-text
+                                small UI Designer and Frontend Developer
+                        .start-button-wrap
+                            #preloader
+                                #status
+                                    .spinner.text-center
+                                        i.fa.fa-spinner.fa-2x.fa-spin
+                            .startButton.text-center
+                                a.btn.btn-default.btn-outline-invert View Portfolio
+        include ./inc/nav.jade
+        include ./inc/overlays.jade
+        .main-content
+            block content
+        include ./inc/global-end.jade
