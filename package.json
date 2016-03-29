@@ -1,3 +1,7 @@
+"scripts": {
+  "start": "node app.js"
+},
+"main": "app.js"
 {
   "name": "Portfolio",
   "version": "0.0.1",
@@ -8,7 +12,3 @@
     "less-middleware": "*"
   }
 }
-"scripts": {
-  "start": "node app.js"
-},
-"main": "app.js"
