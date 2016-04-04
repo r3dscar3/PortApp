@@ -11,8 +11,8 @@ app.post('/', function (req, res) {
   smtpTrans = nodemailer.createTransport('SMTP', {
       service: 'Gmail',
       auth: {
-          user: "nolanthompson34@gmail.com",
-          pass: "B!00dy13" 
+          user: "username",
+          pass: "password" 
       }
   });
   //Mail options
