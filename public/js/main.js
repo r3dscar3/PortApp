@@ -104,7 +104,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.close').click(function () {
+    $('a.close').click(function () {
         var d = 'left';
         if ($('.info-wrap').is(':visible')) {
             d = 'right';
@@ -147,22 +147,13 @@ $(document).ready(function () {
         $('.carousel .item.active .carousel-caption').removeClass('fadeOut').addClass('fadeIn');
     }
 
-    $('.startButton').on('click', function() {
+    $('.startButton').on('click', function () {
         $('.introduction').removeClass('fadeIn').addClass('fadeOut', function () {
-            setTimeout( function() {
+            setTimeout(function () {
                 $('.introduction').css('display', 'none');
                 fadeIntro();
             }, 1000);
         });
-    });
-
-    $('#mainCarousel').on('slid.bs.carousel', function () {
-        $('.carousel .item.active .carousel-caption').addClass('fadeIn').removeClass('fadeOut');
-        captionSizer();
-    });
-
-    $('#mainCarousel').on('slide.bs.carousel', function () {
-        $('.carousel .item.active .carousel-caption').addClass('fadeOut').removeClass('fadeIn');
     });
 
     function captionSizer() {
@@ -187,12 +178,69 @@ $(document).ready(function () {
     }
     captionSizer();
 
-    randomColor = function () {
-        colors = ['rgba(124, 108, 212, 0.9)', 'rgba(16, 198, 39, 0.9)', 'rgba(11, 173, 242, 0.9)', 'rgba(234, 169, 13, 0.9)', 'rgba(203, 48, 137, 0.9)'];
+    $('#mainCarousel').on('slid.bs.carousel', function () {
+        $('.carousel .item.active .carousel-caption').addClass('fadeIn').removeClass('fadeOut');
+        captionSizer();
+    });
+
+    $('#mainCarousel').on('slide.bs.carousel', function () {
+        $('.carousel .item.active .carousel-caption').addClass('fadeOut').removeClass('fadeIn');
+    });
+
+    var randomColor = function () {
+        var colors = ['rgba(124, 108, 212, 0.9)', 'rgba(16, 198, 39, 0.9)', 'rgba(11, 173, 242, 0.9)', 'rgba(234, 169, 13, 0.9)', 'rgba(203, 48, 137, 0.9)'];
         return colors[Math.floor(Math.random() * colors.length)];
     };
 
     $('.carousel-caption').css('background-color', randomColor);
+
+    $('.thank-you .close').on('click', function () {
+        window.open('http://pgdbend.com');
+    });
+
+    $(function () {
+        $('.error').hide();
+        $("#submit_btn").click(function () {
+            // validate and process form here
+
+            $('.error').hide();
+            var name = $("input#name").val();
+            if (name === "") {
+                $("label#name_error").show();
+                $("input#name").focus();
+                return false;
+            }
+            var email = $("input#email").val();
+            if (email === "") {
+                $("label#email_error").show();
+                $("input#email").focus();
+                return false;
+            }
+            var message = $("textarea#message").val();
+            
+            var dataString = 'name=' + name + '&email=' + email + '&message=' + message;
+            //alert (dataString);return false;
+            $.ajax({
+                type: "POST",
+                url: "php/form_mailer.php",
+                data: dataString,
+                success: function () {
+                    $('#contactForm').html("<div id='returnMessage'></div>");
+                    $('#returnMessage').html("<h2>Contact Form Submitted!</h2>")
+                        .append("<p>We will be in touch soon.</p>")
+                        .append("<div id='returnMessagecheck'></div>")
+                        .hide()
+                        .fadeIn(1500, function () {
+                            $('#returnMessagecheck').html("<i class='fa fa-check fa-2x text-success'></i>");
+                        });
+                }
+            });
+            return false;
+
+        });
+    });
+
+
 
     // Scroll mMnu
 
@@ -222,4 +270,6 @@ $(document).ready(function () {
     //            lastScrollTop = st;
     //        });
     //    });
+
+
 });
