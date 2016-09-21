@@ -1,0 +1,111 @@
+@import 'custom'
+@import '../vendor/bootstrap/bootstrap'
+@import '../vendor/font-awesome-master/stylesheets/font-awesome'
+@import 'functions'
+@import 'mixins'
+
+html, body
+  height: 100%
+  
+body
+  background-color: $body-bg
+  @include textShadow(transparentize(invert($body-color), 0.6))
+
+h1,h2,h3,h4,h5,h6
+  @include alt-font
+  
+a
+  @include transition(all,0.3s)
+    
+small
+  font-family: $font-family-sans-serif
+
+.side-menu-contain
+  background: $gray-dark
+  position: fixed
+  display: none
+  height: 100vh
+  width: 25%
+  padding: $grid-gutter-width / 2
+  overflow: hidden
+  z-index: 999
+  color: $body-bg
+  @include textShadow(transparentize(invert($body-bg), 0.6))
+  @include inset-drop-shadow(0, -1px, 10px, darken($gray-dark, 10%))
+  border-right: 1px solid transparentize($body-bg, 0.4)
+  .full-brand
+    width: 100%
+    height: 50px
+    background: url('../images/logo.svg') no-repeat center
+    margin-bottom: 15px
+    
+.main-contain
+  position: relative
+  height: 100vh
+  overflow-x: scroll
+  .header
+    background-color: $jumbotron-bg
+    z-index: 998
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    .navbar-custom
+      position: relative
+      @include border-radius($border-radius)
+      @include textShadow(transparentize(invert($body-bg), 0.6))
+      width: 100%
+      padding: 10px 15px
+      .full-brand
+        height: 50px
+        .menu-bars
+          color: darken($jumbotron-bg, 8%)
+          position: relative
+
+  .jumbotron
+    @include border-radius(0)
+    position: relative
+    padding: 0
+    margin: 0
+    .container-fluid
+      .row
+        height: 100vh
+        h1
+          color: $body-bg
+          small
+            color: transparentize($body-bg, 0.5)
+        .btn-outline-secondary
+          color: #fff
+          &:hover
+            color: $jumbotron-bg
+  
+  .main
+    section
+      position: relative
+      display: block
+      height: auto
+      background-color: $body-bg
+      margin-bottom: 60px
+      &.collapsed
+        display: none
+    
+.footer
+    
+.row-margin
+  @extend .row
+  margin-top: 15px
+  margin-bottom: 15px
+  
+.btn + .btn
+  margin-left: 4px
+
+@include sticky-footer(150px, ".main-container", ".footer-spacer", ".footer")
+  
+.border-left + .border-left
+  @include border-left(1px, $body-bg)
+  
+
+    
+.clear-angle
+  margin-top: 60px

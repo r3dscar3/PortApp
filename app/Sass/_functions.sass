@@ -1,0 +1,33 @@
+@function translucent($color, $opacity)
+  @return rgba($color, $opacity)
+  
+@function multiple-text-shadow ($num, $color1, $color2:$color1)
+  $extra: $num - 100
+  $half: $extra / 2
+  $max: 100 + $half
+  $value: '0 0 0 #{$color1}'
+  @for $i from 1 through $num
+    @if $i <= $half
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + $color2
+    @else if $i <= $max
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + mix($color1, $color2, $i * 1 - $half)
+    @else
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + $color1
+
+  @return unquote($value)
+  
+@function multiple-box-shadow ($num, $color1, $color2:$color1)
+  $extra: $num - 100
+  $half: $extra / 2
+  $max: 100 + $half
+  $value: '0 0 0 #{$color1}'
+  @for $i from 1 through $num
+    @if $i <= $half
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + $color2
+    @else if $i <= $max
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + mix($color1, $color2, $i * 1 - $half)
+    @else
+      $value: '#{$value} , #{$i * 1}px #{$i * 1}px 0 ' + $color1
+
+  @return unquote($value)
+  
