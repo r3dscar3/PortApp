@@ -1,0 +1,27 @@
+#contact.overlay
+  .close <i class="fa fa-times"></i>
+  .row.flex-items-xs-center.flex-items-xs-middle
+    .col-sm-8.col-md-6.col-lg-4
+      .contact-form
+        h2.text-xs-center Say Hello!
+        .panel.panel-default.bordered
+          .panel-body
+            #contactForm
+              form(action="" name="contact")
+                fieldset
+                  .form-group
+                    label.required#name_label(for="name") Name
+                    input.form-control(name="name" type="text" value="" id="name")
+                    label#name_error.error(for="name") This field is required.
+                  .form-group
+                    label#email_label.required(for="email") Email
+                    input#email.form-control(name="Email" type="email" value="")
+                    label#email_error.error(for="email") This field is required.
+                  .url-field
+                    input#url(name="url" type="text" value="")
+                  .form-group
+                    label.required(for="message") Message
+                    textarea#message.form-control(name="message" rows="4")
+                  input#submit_btn.btn.btn-danger.btn-block(type="submit" value="Send" name="submit")
+      .h3.text-xs-center
+        i.fa.fa-lock.fa-2x
