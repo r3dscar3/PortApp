@@ -3,6 +3,7 @@
 @import '../vendor/font-awesome-master/stylesheets/font-awesome'
 @import 'functions'
 @import 'mixins'
+@import 'jquery'
 
 html, body
   height: 100%
@@ -122,6 +123,7 @@ small
     @include box-shadow(1px, 4px, 15px, transparentize(black, 0.6))
     @include text-shadow(transpaentize(black, 0.8))
     border: 1px solid lighten($gray, 25%)
+    z-index: 1001
     i
       margin-top: 1px
       margin-left: 1px
@@ -130,11 +132,29 @@ small
       @include box-shadow(1px, 1px, 2px, transparentize(black, 0.8))
       i
         opacity: 1
-  .carousel
-    width: 100%
+  .portfolio-container
+    padding-top: 20px
+    margin-bottom: 45px
     img
-      max-width: 100%
-      height: auto
+      @include border-radius($border-radius)
+    .built-with
+      text-align: center
+      color: darken($gray-light, 20%)
+      .built-with-bootstrap
+        padding: 0 6px
+        border-radius: 6px
+        border: 2px solid darken($gray-light, 20%)
+        font-family: 'Helvetica Neue'
+        font-size: 1.7em
+        font-weight: bold
+        margin-left: 15px
+      .built-with-jquery
+        font-size: 2em
+        margin-left: 15px
+  .portfolio-container + .portfolio-container
+    padding-top: 35px
+    border-top: 1px solid darken($gray-light, 10%)
+    
       
 #contact
   background-color: $brand-primary
@@ -151,6 +171,8 @@ small
 #ui, #graphic
   background-color: $gray-light
   .nav-pills
+    position: relative
+    z-index: 1001
     .nav-link
       border-bottom: 1px solid transparent
       &.active, &:hover, &:focus
