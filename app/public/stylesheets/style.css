@@ -7209,13 +7209,13 @@ a.text-danger:focus, a.text-danger:hover {
   clip: auto; }
 
 @font-face {
-  font-family: "jquery";
-  src: url("../fonts/jquery/jquery.eot?98336273");
-  src: url("../fonts/jquery/jquery.eot?98336273#iefix") format("embedded-opentype"), url("../fonts/jquery/jquery.woff2?98336273") format("woff2"), url("../fonts/jquery/jquery.woff?98336273") format("woff"), url("../fonts/jquery/jquery.ttf?98336273") format("truetype"), url("../fonts/jquery/jquery.svg?98336273#jquery") format("svg");
+  font-family: "builders";
+  src: url("../fonts/builders/builders.eot?98336273");
+  src: url("../fonts/builders/builders.eot?98336273#iefix") format("embedded-opentype"), url("../fonts/builders/builders.woff2?98336273") format("woff2"), url("../fonts/builders/builders.woff?98336273") format("woff"), url("../fonts/builders/builders.ttf?98336273") format("truetype"), url("../fonts/builders/builders.svg?98336273#builders") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "jquery";
+  font-family: "builders";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -7234,8 +7234,13 @@ a.text-danger:focus, a.text-danger:hover {
 .icon-jquery:before {
   content: ""; }
 
+.icon-angularjs:before {
+  content: ""; }
+
 html, body {
-  height: 100%; }
+  position: relative;
+  height: auto;
+  min-height: 100%; }
 
 body {
   background-color: #e2f5fc;
@@ -7302,11 +7307,8 @@ small {
     color: #fff; }
 
 .main-contain {
-  position: relative;
-  height: 100vh;
-  overflow-x: scroll; }
+  position: relative; }
   .main-contain .header {
-    background-color: rgba(12, 83, 109, 0.6);
     z-index: 998;
     position: fixed;
     top: 0;
@@ -7395,31 +7397,6 @@ small {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
       .overlay .close:hover i {
         opacity: 1; }
-  .overlay .portfolio-container {
-    padding-top: 20px;
-    margin-bottom: 45px; }
-    .overlay .portfolio-container img {
-      -webkit-border-radius: 0.25rem;
-      -moz-border-radius: 0.25rem;
-      -ms-border-radius: 0.25rem;
-      border-radius: 0.25rem; }
-    .overlay .portfolio-container .built-with {
-      text-align: center;
-      color: #a4a9ad; }
-      .overlay .portfolio-container .built-with .built-with-bootstrap {
-        padding: 0 6px;
-        border-radius: 6px;
-        border: 2px solid #a4a9ad;
-        font-family: "Helvetica Neue";
-        font-size: 1.7em;
-        font-weight: bold;
-        margin-left: 15px; }
-      .overlay .portfolio-container .built-with .built-with-jquery {
-        font-size: 2em;
-        margin-left: 15px; }
-  .overlay .portfolio-container + .portfolio-container {
-    padding-top: 35px;
-    border-top: 1px solid #bfc2c5; }
 
 #contact {
   background-color: #18aae0; }
@@ -7431,26 +7408,112 @@ small {
     margin-top: 0; }
 
 #info {
-  background-color: #e5217c; }
+  background-color: #e5217c;
+  color: #620b33; }
+  #info .profile-pic {
+    max-width: 150px; }
+  #info .skillset li {
+    border: 1px solid #620b33;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    padding: 8px 12px;
+    border-radius: 14px; }
 
 #ui, #graphic {
-  background-color: #dadcdd; }
-  #ui .nav-pills, #graphic .nav-pills {
-    position: relative;
-    z-index: 1001; }
-    #ui .nav-pills .nav-link, #graphic .nav-pills .nav-link {
-      border-bottom: 1px solid transparent; }
-      #ui .nav-pills .nav-link.active, #ui .nav-pills .nav-link:hover, #ui .nav-pills .nav-link:focus, #graphic .nav-pills .nav-link.active, #graphic .nav-pills .nav-link:hover, #graphic .nav-pills .nav-link:focus {
-        background-color: #cccfd1;
-        border-bottom: 1px solid rgba(226, 245, 252, 0.2);
-        -webkit-box-shadow: inset 0 1px 2px #bfc2c5;
-        -moz-box-shadow: inset 0 1px 2px #bfc2c5;
-        -ms-box-shadow: inset 0 1px 2px #bfc2c5;
-        box-shadow: inset 0 1px 2px #bfc2c5;
-        color: #2f373c; }
+  position: relative;
+  background-color: #dadcdd;
+  height: 100vh; }
+  #ui h2.portfolio-header, #graphic h2.portfolio-header {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    margin-bottom: 30px; }
+    #ui h2.portfolio-header span, #graphic h2.portfolio-header span {
+      position: relative;
+      border-top: 1px solid #bfc2c5;
+      border-bottom: 1px solid #bfc2c5; }
+      #ui h2.portfolio-header span:before, #ui h2.portfolio-header span:after, #graphic h2.portfolio-header span:before, #graphic h2.portfolio-header span:after {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #0c536d;
+        top: 50%;
+        margin-top: -5px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      #ui h2.portfolio-header span:before, #graphic h2.portfolio-header span:before {
+        left: -40px; }
+      #ui h2.portfolio-header span:after, #graphic h2.portfolio-header span:after {
+        right: -40px; }
+  #ui h4, #graphic h4 {
+    font-size: 16px; }
   #ui h5.titles, #graphic h5.titles {
     font-family: "Abel", sans-serif;
     color: rgba(226, 245, 252, 0.5); }
+  #ui .carousel, #graphic .carousel {
+    height: 100vh;
+    width: 100%; }
+    #ui .carousel .carousel-indicators, #graphic .carousel .carousel-indicators {
+      right: 50px;
+      top: 50%;
+      bottom: inherit;
+      left: inherit;
+      margin-right: 0;
+      width: auto; }
+      #ui .carousel .carousel-indicators li, #graphic .carousel .carousel-indicators li {
+        border-color: #2f373c;
+        display: block;
+        margin-bottom: 10px; }
+        #ui .carousel .carousel-indicators li.active, #graphic .carousel .carousel-indicators li.active {
+          background-color: #2f373c; }
+    #ui .carousel .carousel-inner, #graphic .carousel .carousel-inner {
+      height: 100vh; }
+      #ui .carousel .carousel-inner .carousel-item, #graphic .carousel .carousel-inner .carousel-item {
+        height: 100vh; }
+        #ui .carousel .carousel-inner .carousel-item .portfolio-container, #graphic .carousel .carousel-inner .carousel-item .portfolio-container {
+          position: relative;
+          color: #2f373c;
+          height: 100%; }
+          #ui .carousel .carousel-inner .carousel-item .portfolio-container .img-row, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .img-row {
+            position: absolute;
+            top: 70px;
+            width: 100%; }
+            #ui .carousel .carousel-inner .carousel-item .portfolio-container .img-row img, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .img-row img {
+              display: block;
+              max-width: 100%;
+              height: auto;
+              margin: auto; }
+          #ui .carousel .carousel-inner .carousel-item .portfolio-container .desc-row, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .desc-row {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 30px; }
+          #ui .carousel .carousel-inner .carousel-item .portfolio-container .built-with, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .built-with {
+            text-align: center;
+            color: #a4a9ad; }
+            #ui .carousel .carousel-inner .carousel-item .portfolio-container .built-with i, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .built-with i {
+              margin-left: 8px;
+              font-size: 4vh; }
+            #ui .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-bootstrap, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-bootstrap {
+              padding: 0 6px;
+              border-radius: 6px;
+              border: 2px solid #a4a9ad;
+              font-family: "Helvetica Neue";
+              font-size: 3vh;
+              font-weight: bold;
+              margin-left: 15px; }
+            #ui .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-jquery, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-jquery {
+              font-size: 4vh;
+              margin-left: 10px; }
+            #ui .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-angular, #graphic .carousel .carousel-inner .carousel-item .portfolio-container .built-with .built-with-angular {
+              font-size: 4vh;
+              margin-left: 10px; }
+          #ui .carousel .carousel-inner .carousel-item .portfolio-container h3, #graphic .carousel .carousel-inner .carousel-item .portfolio-container h3 {
+            margin-bottom: 5px; }
 
 .row-margin {
   margin-top: 15px;

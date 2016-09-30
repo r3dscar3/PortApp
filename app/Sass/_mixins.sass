@@ -9,6 +9,12 @@
   -moz-transition: $attribute, $timing
   -ms-transition: $attribute, $timing
   transition: $attribute, $timing
+
+@mixin transform($transform, $amount)
+  -webkit-transform: $transform + '(' + $amount + ')'
+  -moz-transform: $transform + '(' + $amount + ')'
+  -ms-transform: $transform + '(' + $amount + ')'
+  transform: $transform + '(' + $amount + ')'
   
 @mixin text-shadow($colors)
   -webkit-text-shadow: 0 1px 0 $colors
@@ -33,6 +39,12 @@
   -moz-box-shadow: $left $top $blur $colors
   -ms-box-shadow: $left $top $blur $colors
   box-shadow: $left $top $blur $colors
+  
+@mixin box-shadow-one-side($left, $top, $blur, $spread, $colors)
+  -webkit-box-shadow: $left $top $blur $spread $colors
+  -moz-box-shadow: $left $top $blur $spread $colors
+  -ms-box-shadow: $left $top $blur $spread $colors
+  box-shadow: $left $top $blur $spread $colors
 
 @mixin inset-box-shadow($left, $top, $blur, $colors)
   -webkit-box-shadow: inset $left $top $blur $colors
