@@ -71,6 +71,11 @@
   background: -webkit-linear-gradient(top,  $color 0%, transparentize($color, 1) 100%)
   background: linear-gradient(to bottom,  $color 0%, transparentize($color, 1) 100%)
   
+@mixin gradient-fade-reverse($color)
+  background: -moz-linear-gradient(top, transparentize($color, 1) 0%, $color 100%)
+  background: -webkit-linear-gradient(top, transparentize($color, 1) 0%, $color 100%)
+  background: linear-gradient(to bottom,  transparentize($color, 1) 0%, $color 100%)
+  
 @mixin alt-font
   font-family: 'Titillium Web', sans-serif
   letter-spacing: -0.01em

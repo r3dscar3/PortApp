@@ -43,6 +43,9 @@ $(document).ready(function () {
     $('.main-contain').animate({
       'margin-left': $('.main-contain').css('margin-left') === '0px' ? '375px' : '0px'
     }, 300, 'swing');
+    setTimeout(function() {
+      uiSubMenuAffix();
+    },300);
   });
 
   //  Overlay css
@@ -61,6 +64,8 @@ $(document).ready(function () {
     $(this).parent('div').toggle('slide', {
       direction: d
     }, 400);
+
+    $('body').css('overflow-y', 'scroll');
   });
 
   //  Open Contact Overlay
@@ -69,6 +74,7 @@ $(document).ready(function () {
     $('#contact').toggle('slide', {
       direction: 'down'
     }, 400);
+    $('body').css('overflow', 'hidden');
   });
 
   //  Open Info Overlay
@@ -77,25 +83,48 @@ $(document).ready(function () {
     $('#info').toggle('slide', {
       direction: 'up'
     }, 400);
-  });
-  
-  // top margin for centering carousel indicators
-  function topCenter() {
-    var halfHeight =  $('.carousel-indicators').innerHeight() / 2;
-    $('.carousel-indicators').css('margin-top', -halfHeight);
-  }
-  topCenter();
-  
-  $(window).resize(function () {
-    overlaySizer();
-    topCenter();
+    $('body').css('overflow', 'hidden');
   });
 
-  function startCarousel() {
-    $('#mainCarousel').carousel({
-      interval: 10000,
-      pause: false
-    });
+  $(window).resize(function () {
+    overlaySizer();
+  });
+
+  var uiSubMenuW = $('.ui-sub-menu').innerWidth();
+  var uiSubMenuML = uiSubMenuW / 2;
+  
+  function uiSubMenuAffix() {
+    // Sub Menu Attach
+    var wS = $(window).scrollTop();
+    var subMenuS = $('.ui-sub-menu').offset().top - 20;
+    var uiS = $('.ui-header').offset().top;
+    var uiHeaderH = $('.ui-header').innerHeight();
+
+    if (wS > subMenuS && $('.main-contain').css('margin-left') === '0px') {
+      $('.ui-sub-menu').addClass('attached');
+      $('.ui-sub-menu').css({
+        'margin-left': -uiSubMenuML,
+        width: uiSubMenuW
+      });
+      $('.ui-header').addClass('clearspace');
+    } else if (wS > subMenuS && $('.main-contain').css('margin-left') === '375px') {
+      $('.ui-sub-menu').addClass('attached');
+      $('.ui-sub-menu').css({
+        'margin-left': -(uiSubMenuML - 375),
+        width: uiSubMenuW - 375
+      });
+      $('.ui-header').addClass('clearspace');
+    }
+    if (wS < (uiS + uiHeaderH)) {
+      $('.ui-sub-menu').removeClass('attached');
+      $('.ui-header').removeClass('clearspace');
+      $('.ui-sub-menu').removeAttr('style');
+    }
   }
+  uiSubMenuAffix();
+  
+  $(window).scroll(function () {
+    uiSubMenuAffix();
+  });
 
 });

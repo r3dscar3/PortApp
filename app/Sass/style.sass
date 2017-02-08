@@ -9,16 +9,17 @@ html, body
   position: relative
   height: auto
   min-height: 100%
+
 body
   background-color: $body-bg
   @include text-shadow(transparentize(invert($body-color), 0.6))
 
 h1,h2,h3,h4,h5,h6
   @include alt-font
-  
+
 a
   @include transition(all,0.3s)
-    
+
 small
   font-family: $font-family-sans-serif
 
@@ -35,6 +36,7 @@ small
   @include text-shadow(transparentize(invert($body-bg), 0.6))
   @include inset-box-shadow(0, -1px, 10px, darken($gray-dark, 10%))
   border-right: 1px solid transparentize($body-bg, 0.4)
+
   .full-brand
     width: 120px
     height: 120px
@@ -42,6 +44,7 @@ small
     background-size: cover
     margin: 0 auto 15px
     @include border-radius(100%)
+
   .nav-pills
     .nav-link
       border-bottom: 1px solid transparent
@@ -49,14 +52,17 @@ small
         background-color: darken($gray-dark, 5%)
         border-bottom: 1px solid transparentize($body-bg, 0.8)
         @include inset-box-shadow(0, 1px, 2px, darken($gray-dark, 10%))
+
   h5.titles
     font-family: $font-family-sans-serif
     color: transparentize($body-bg, 0.5)
+
   a[class*="btn-outline-"]
     color: #fff
-    
+
 .main-contain
   position: relative
+
   .header
     z-index: 998
     position: fixed
@@ -64,13 +70,16 @@ small
     left: 0
     right: 0
     width: 100%
+
     .navbar-custom
       position: relative
       @include border-radius($border-radius)
       @include text-shadow(transparentize(invert($body-bg), 0.6))
       width: 100%
       padding: 10px 15px
+
       .full-brand
+
         .menu-bars
           color: darken($jumbotron-bg, 8%)
           position: relative
@@ -82,31 +91,40 @@ small
     position: relative
     padding: 0
     margin: 0
+
     .container-fluid
+
       .row
         height: 100vh
+
         h1
           color: $body-bg
+
           small
             color: transparentize($body-bg, 0.5)
+
         .btn-outline-secondary
           color: #fff
-          &:hover
+
+          &:hover, &:focus
             color: $jumbotron-bg
-  
+
   .main
+
     section
       position: relative
       display: block
       height: auto
       background-color: $body-bg
       margin-bottom: 60px
+
       &.collapsed
         display: none
 
 .overlay
   border: 5px solid #fff
   width: 100%
+
   .close
     color: $brand-danger
     opacity: 0
@@ -122,29 +140,37 @@ small
     @include text-shadow(transpaentize(black, 0.8))
     border: 1px solid lighten($gray, 25%)
     z-index: 1001
+
     i
       margin-top: 1px
       margin-left: 1px
       opacity: 0.8
+
     &:hover
       @include box-shadow(1px, 1px, 2px, transparentize(black, 0.8))
+
       i
         opacity: 1
-        
+
 #contact
   background-color: $brand-primary
+
   .contact-form
     width: 100%
+
   .row
     height: 100%
+
   h2
     margin-top: 0
-    
+
 #info
   background-color: $brand-danger
   color: darken($brand-danger, 30%)
+
   .profile-pic
     max-width: 150px
+
   .skillset li
     border: 1px solid darken($brand-danger, 30%)
     margin-right: 5px
@@ -152,20 +178,86 @@ small
     font-weight: 900
     padding: 8px 12px
     border-radius: 14px
-    
-#ui, #graphic
+
+#ui,
+#graphic
+  display: none
   position: relative
-  background-color: $gray-light
-  height: 100vh
+  background: $gray-light url('../images/portfolio-bg.jpg') no-repeat center
+  background-size: cover
+  background-attachment: fixed
+  min-height: 100vh
+
+  .portfolio-hero
+
+    .jumbotron
+      background-image: none
+      background-color: transparent
+
+      .row
+        height: 100vh
+
+        .display-4
+          letter-spacing: -0.01
+
+        .row-margin
+          height: auto
+          margin-top: 60px
+
+          a
+            display: block
+            border-bottom: 5px solid transparent
+
+            &:hover
+              text-decoration: none
+              border-bottom: 5px solid $jumbotron-bg
+
+  .section-hero
+    @extend .portfolio-hero
+
+    .jumbotron
+      background-image: none
+      background-color: transparent
+
+      .display-2
+        line-height: 1.1em
+        background-color: $jumbotron-bg
+        color: #fff
+        padding: 30px
+        border-radius: $border-radius
+        border: 1px solid darken($jumbotron-bg, 15%)
+        @include box-shadow-one-side(0, 20px, 10px, -8px, transparentize(black, 0.6))
+        @include long-text-shadow(250, darken($jumbotron-bg, 5%))
+        overflow: hidden
+
+        &.ui-header
+
+          &.clearspace
+            margin-bottom: 100px
+
+      .ui-sub-menu
+
+        &.attached
+          position: fixed
+          top: 15px
+          left: 50%
+          margin-top: 0
+          z-index: 1999
+
+  .col-md
+    max-width: 700px
+
   h2.portfolio-header
     position: absolute
     top: 30px
     width: 100%
     margin-bottom: 30px
+
     span
       position: relative
       border-top: 1px solid darken($gray-light, 10%)
       border-bottom: 1px solid darken($gray-light, 10%)
+
       &:before, &:after
         position: absolute
         content: ''
@@ -174,93 +266,74 @@ small
         background-color: $body-color
         top: 50%
         margin-top: -5px
-        @include transform(rotate, 45deg) 
+        @include transform(rotate, 45deg)
+
       &:before
         left: -40px
+
       &:after
         right: -40px
+
   h4
     font-size: 16px
+
   h5.titles
     font-family: $font-family-sans-serif
     color: transparentize($body-bg, 0.5)
-  .carousel
-    height: 100vh
-    width: 100%
-    .carousel-indicators
-      right: 50px
-      top: 50%
-      bottom: inherit
-      left: inherit
-      margin-right: 0
-      width: auto
-      li
-        border-color: $gray-dark
-        display: block
-        margin-bottom: 10px
-        &.active
-          background-color: $gray-dark
-    .carousel-inner
-      height: 100vh
-      .carousel-item
+
+  .portfolio-item
+
+    .portfolio-container
+      position: relative
+      color: $gray-dark
+
+      .row
         height: 100vh
-        .portfolio-container
-          position: relative
-          color: $gray-dark
-          height: 100%
-          .img-row
-            position: absolute
-            top: 70px
-            width: 100%
-            img
-              display: block
-              max-width: 100%
-              height: auto
-              margin: auto
-          .desc-row
-            position: absolute
-            bottom: 0
-            width: 100%
-            padding-bottom: 30px
-          .built-with
-            text-align: center
-            color: darken($gray-light, 20%)
-            i
-              margin-left: 8px
-              font-size: 4vh
-            .built-with-bootstrap
-              padding: 0 6px
-              border-radius: 6px
-              border: 2px solid darken($gray-light, 20%)
-              font-family: 'Helvetica Neue'
-              font-size: 3vh
-              font-weight: bold
-              margin-left: 15px
-            .built-with-jquery
-              font-size: 4vh
-              margin-left: 10px
-            .built-with-angular
-              font-size: 4vh
-              margin-left: 10px
-          h3
-            margin-bottom: 5px
-    
+
+      .built-with
+        text-align: center
+        color: darken($gray-light, 20%)
+
+        i
+          margin-left: 8px
+          font-size: 4vh
+
+        .built-with-bootstrap
+          padding: 0 6px
+          border-radius: 6px
+          border: 2px solid darken($gray-light, 20%)
+          font-family: 'Helvetica Neue'
+          font-size: 3vh
+          font-weight: bold
+          margin-left: 15px
+
+        .built-with-jquery
+          font-size: 4vh
+          margin-left: 10px
+
+        .built-with-angular
+          font-size: 4vh
+          margin-left: 10px
+
+        h3
+          margin-bottom: 5px
+
 .footer
-    
+
 .row-margin
   @extend .row
   margin-top: 15px
   margin-bottom: 15px
-  
+
 .btn + .btn
   margin-left: 4px
 
 @include sticky-footer(70px, ".side-menu-wrap", ".footer-spacer", ".footer")
-  
+
 .border-left + .border-left
   @include border-left(1px, $body-bg)
-  
 
-    
+
+
 .clear-angle
   margin-top: 60px
