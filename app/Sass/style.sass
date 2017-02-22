@@ -11,7 +11,7 @@ html, body
   min-height: 100%
 
 body
-  background-color: $body-bg
+  background-color: $gray-light
   @include text-shadow(transparentize(invert($body-color), 0.6))
 
 h1,h2,h3,h4,h5,h6
@@ -179,144 +179,75 @@ small
     padding: 8px 12px
     border-radius: 14px
 
-#ui,
-#graphic
+#portfolio
   display: none
-  position: relative
-  background: $gray-light url('../images/portfolio-bg.jpg') no-repeat center
-  background-size: cover
-  background-attachment: fixed
-  min-height: 100vh
+  position: absolute
+  background: $gray-light
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
 
-  .portfolio-hero
+  .brand
+    margin-top: 15px
 
-    .jumbotron
-      background-image: none
-      background-color: transparent
-
-      .row
-        height: 100vh
-
-        .display-4
-          letter-spacing: -0.01
-
-        .row-margin
-          height: auto
-          margin-top: 60px
-
-          a
-            display: block
-            border-bottom: 5px solid transparent
-
-            &:hover
-              text-decoration: none
-              border-bottom: 5px solid $jumbotron-bg
-
-  .section-hero
-    @extend .portfolio-hero
-
-    .jumbotron
-      background-image: none
-      background-color: transparent
-
-      .display-2
-        line-height: 1.1em
-        background-color: $jumbotron-bg
-        color: #fff
-        padding: 30px
-        border-radius: $border-radius
-        border: 1px solid darken($jumbotron-bg, 15%)
-        @include box-shadow-one-side(0, 20px, 10px, -8px, transparentize(black, 0.6))
-        @include long-text-shadow(250, darken($jumbotron-bg, 5%))
-        overflow: hidden
-
-        &.ui-header
-
-          &.clearspace
-            margin-bottom: 100px
-
-      .ui-sub-menu
-
-        &.attached
-          position: fixed
-          top: 15px
-          left: 50%
-          margin-top: 0
-          z-index: 1999
-
-  .col-md
-    max-width: 700px
-
-  h2.portfolio-header
+  #portfolioCarousel
     position: absolute
-    top: 30px
     width: 100%
-    margin-bottom: 30px
-
-    span
-      position: relative
-      border-top: 1px solid darken($gray-light, 10%)
-      border-bottom: 1px solid darken($gray-light, 10%)
-
-      &:before, &:after
-        position: absolute
-        content: ''
-        width: 10px
-        height: 10px
-        background-color: $body-color
-        top: 50%
-        margin-top: -5px
-        @include transform(rotate, 45deg)
-
-      &:before
-        left: -40px
-
-      &:after
-        right: -40px
-
-  h4
-    font-size: 16px
-
-  h5.titles
-    font-family: $font-family-sans-serif
-    color: transparentize($body-bg, 0.5)
-
-  .portfolio-item
 
     .portfolio-container
       position: relative
-      color: $gray-dark
+      width: 50%
+      height: 50vh
+      margin: auto
+      overflow: hidden
 
-      .row
-        height: 100vh
+      &:hover
+        .portfolio-bg
+          transform: translateZ(-25px)
 
-      .built-with
-        text-align: center
-        color: darken($gray-light, 20%)
+      .portfolio-bg
+        width: 100%
+        height: 100%
+        position: absolute
+        overflow: hidden
+        @include box-shadow-one-side(0, 10px, 6px, -5px, transparentize(black, 0.7))
+        transform: translateZ(-125px)
+        transition: transform, 0.3s
+        z-index: 0
 
-        i
-          margin-left: 8px
-          font-size: 4vh
 
-        .built-with-bootstrap
-          padding: 0 6px
-          border-radius: 6px
-          border: 2px solid darken($gray-light, 20%)
-          font-family: 'Helvetica Neue'
-          font-size: 3vh
-          font-weight: bold
-          margin-left: 15px
 
-        .built-with-jquery
-          font-size: 4vh
-          margin-left: 10px
+        &.hce
+          background-color: $brand-info
 
-        .built-with-angular
-          font-size: 4vh
-          margin-left: 10px
+      .portfolio-hero
 
-        h3
-          margin-bottom: 5px
+        .jumbotron
+          background-image: none
+          background-color: transparent
+          height: 100%
+
+          .container-fluid
+            height: 100%
+
+          .row
+            height: 100%
+
+            .display-4
+              letter-spacing: -0.01
+
+            .row-margin
+              height: auto
+              margin-top: 60px
+
+              a
+                display: block
+                border-bottom: 5px solid transparent
+
+                &:hover
+                  text-decoration: none
+                  border-bottom: 5px solid $jumbotron-bg
 
 .footer
 
