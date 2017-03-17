@@ -1,19 +1,25 @@
 footer.footer
   .cotainer-fluid
-    .row-margin.flex-items-xs-center
-      .col-sm.border-left
-        .row
-          .col-sm
-            a(href="#")
-              i.fa.fa-git-square.fa-2x
-          .col-sm
-            a(href="#")
-              i.fa.fa-linkedin-square.fa-2x
-          .col-sm
-            a(href="#")
-              i.fa.fa-envelope.fa-2x
-      .col-sm-6.border-left
-        address <strong>&copy; Nolan Thompson</strong>
+    .row-margin.align-items-center
+      .col.border-left
+        strong &copy; Nolan Thompson
+
+      .col.border-left
+        a(href="http://codepen.io/r3dscar3/" target="_blank")
+          i.fa.fa-codepen
+          | &nbsp;
+
+        a(href="https://github.com/nolanthompson-teamunify" target="_blank")
+          i.fa.fa-git-square
+          | &nbsp;
+
+        a(href="https://www.linkedin.com/in/nolan-thompson-b73b9416/" target="_blank")
+          i.fa.fa-linkedin-square
+          | &nbsp;
+
+        a.contact(href="#")
+          i.fa.fa-envelope
+          | &nbsp;
 
 script(type="text/javascript" src="vendor-js/jquery-3.1.0.min.js")
 script(src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous")

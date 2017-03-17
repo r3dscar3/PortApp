@@ -1,60 +1,15 @@
 #portfolio
   .brand
-    img.d-block.m-x-auto(src="images/logo.svg" style="max-width: 100px;")
-  #portfolioCarousel.carousel.slide(data-ride="false")
+    img.d-block.mx-auto(src="images/logo.svg" style="max-width: 100px;")
+  #portfolioCarousel.carousel.slide(data-ride="false" data-wrap="false" data-pause="true")
     .carousel-inner(role="listbox")
-      .carousel-item.active
-        .portfolio-container
-          .portfolio-bg.hce
-          .portfolio-hero
-            .jumbotron
-              .container-fluid
-                .row.flex-items-xs-middle.flex-items-xs-center
-                  .col-md-12
-                    .display-4.text-xs-center Hood Canal Events
-                    img.img-fluid.m-x-auto.d-block(src="images/hce-hero.png" alt="Hood Canal Events")
-          .container-fluid
-            .row.flex-items-xs-middle.flex-items-xs-center
-              .col-md-6
-                h3 Hood Canal Events
-                p.lead Custom Wordpress theme for a travel agency specializing in Pacific Northwest vacations. Built with wordpress, bootstrap, and jquery.
-                h5 What I did
-                p.lead Concept, Design, &amp; Development
-                h4
-                  a.pull-right(href="http://www.hoodcanalevents.com" target="blank") <i class="fa fa-external-link"></i> View Project
-                .clearfix
-                .built-with
-                  i.fa.fa-wordpress.fa-2x
-                  span.built-with-bootstrap B
-                  span.built-with-jquery.icon-jquery
-              .col-md-6
-                img.img-fluid(src="images/project-2.png" alt="Hood Canal Events")
-      .carousel-item
-        .portfolio-item
-          .portfolio-hero
-            .jumbotron
-              .container-fluid
-                .row.flex-items-xs-middle.flex-items-xs-center
-                  .col-md-12
-                    .display-4.text-xs-center Hood Canal Events
-                    img.img-fluid.m-x-auto.d-block(src="images/hce-hero.png" alt="Hood Canal Events")
-          .container-fluid
-            .portfolio-container
-              .row.flex-items-xs-middle.flex-items-xs-center
-                .col-md-6
-                  h3 Hood Canal Events
-                  p.lead Custom Wordpress theme for a travel agency specializing in Pacific Northwest vacations. Built with wordpress, bootstrap, and jquery.
-                  h5 What I did
-                  p.lead Concept, Design, &amp; Development
-                  h4
-                    a.pull-right(href="http://www.hoodcanalevents.com" target="blank") <i class="fa fa-external-link"></i> View Project
-                  .clearfix
-                  .built-with
-                    i.fa.fa-wordpress.fa-2x
-                    span.built-with-bootstrap B
-                    span.built-with-jquery.icon-jquery
-                .col-md-6
-                  img.img-fluid(src="images/project-2.png" alt="Hood Canal Events")
+      include ./tpl
+      include ./ms
+      include ./st
+      include ./tla
+      include ./university
+      include ./registration
+
       a.carousel-control-prev(href="#portfolioCarousel" role="button" data-slide="prev")
         span(aria-hidden="true")
           i.fa.fa-chevron-left.fa-2x

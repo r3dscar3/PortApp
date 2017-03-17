@@ -1,23 +1,79 @@
-$enable-flex: true
-$enable-shadows: true
-$enable-gradients: true
+$enable-rounded: false
 
-$gray-dark: #2f373c
+// Start with assigning color names to specific hex values.
+$white:  #fff
+$black:  #000
+$red:    #CA3A43
+$orange: #D45B39
+$yellow: #B4CC37
+$green:  #1B943C
+$blue:   #198DB5
+$teal:   #1A9470
+$pink:   #C75FA2
+$purple: #7E60C7
+
+$gray-dark: lighten($black, 20%)
 $gray: #a4a9ad
 $gray-light: lighten($gray, 20%)
 $gray-lighter: lighten($gray, 40%)
 $gray-lightest: lighten($gray-dark, 75%)
 
-$brand-primary: #18aae0
-$body-bg: lighten($brand-primary, 45%)
-$body-color: darken($body-bg, 70%)
-$brand-success: #009a5f
-$brand-info: #e66e16
-$brand-warning: darken($body-bg, 70%)
-$brand-danger: #e5217c
+// Reassign color vars to semantic color scheme
+$brand-primary: $blue
+$brand-secondary: $yellow
+$brand-success: $green
+$brand-info: $teal
+$brand-warning: $orange
+$brand-danger: $red
+$brand-inverse: darken($blue, 30%)
+
+$body-bg: #F3F3F3
+$body-color: $gray-dark
 
 $jumbotron-bg: darken($body-bg, 70%)
 
-$font-family-sans-serif: 'Abel', sans-serif
+// Fonts
+
+$font-family-sans-serif: "Abel", sans-serif
+
+$font-weight-normal: 400
+$font-weight-bold: 700
+
+$lead-font-size: 1.45rem
+
 
 $border-grid-gutter-width: 50px
+
+
+$btn-inverse-bg: $brand-inverse
+
+// Links
+//
+// Style anchor elements.
+$link-color: $brand-primary
+$link-hover-color: lighten($link-color, 15%)
+$link-hover-decoration: none
+
+$border-width: 1px
+
+// Forms
+
+$input-padding-x: 0.75rem
+$input-padding-y: 0.5rem
+$input-line-height: 1.5
+
+$input-bg: transparentize(#fff, 1)
+$input-bg-disabled: transparentize(#fff, 0.2)
+$input-color: $body-color
+$input-border-color: $gray-dark
+$input-btn-border-width: $border-width
+$input-box-shadow: none
+
+$input-border-radius: 0
+$input-border-radius-lg: 0
+$input-border-radius-sm: 0
+
+$input-bg-focus: $input-bg
+$input-border-focus: $brand-danger
+$input-box-shadow-focus: none
+$input-color-focus: $input-color

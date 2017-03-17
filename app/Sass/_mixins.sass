@@ -1,57 +1,89 @@
-@mixin border-radius($radius) 
+//bootstrap mixin customizers
+
+@mixin button-outline-variant($color, $font-color:#fff , $color-hover: #fff)
+  color: $font-color
+  background-image: none
+  background-color: transparent
+  border-color: $color
+  text-shadow: none
+
+  @include hover
+    color: $color-hover
+    background-color: $color
+    border-color: $color
+
+
+  &:focus,
+  &.focus
+    box-shadow: 0 0 0 2px rgba($color, .5)
+
+
+  &.disabled,
+  &:disabled
+    color: $color
+    background-color: transparent
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle
+    color: $color-hover
+    background-color: $color
+    border-color: $color
+
+@mixin border-radius($radius)
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   -ms-border-radius: $radius
   border-radius: $radius
-  
-@mixin transition($attribute, $timing)
-  -webkit-transition: $attribute, $timing
-  -moz-transition: $attribute, $timing
-  -ms-transition: $attribute, $timing
-  transition: $attribute, $timing
+
+@mixin transition($attribute, $timing, $delay:0s)
+  -webkit-transition: $attribute $timing $delay
+  -moz-transition: $attribute $timing $delay
+  -ms-transition: $attribute $timing $delay
+  transition: $attribute $timing $delay
 
 @mixin transform($transform, $amount)
   -webkit-transform: $transform + '(' + $amount + ')'
   -moz-transform: $transform + '(' + $amount + ')'
   -ms-transform: $transform + '(' + $amount + ')'
   transform: $transform + '(' + $amount + ')'
-  
+
 @mixin text-shadow($colors)
   -webkit-text-shadow: 0 1px 0 $colors
   -moz-text-shadow: 0 1px 0 $colors
   -ms-text-shadow: 0 1px 0 $colors
   text-shadow: 0 1px 0 $colors
-  
+
+@mixin custom-text-shadow($top, $left, $blur, $colors)
+  -webkit-text-shadow: $top $left $blur $colors
+  -moz-text-shadow: $top $left $blur $colors
+  -ms-text-shadow: $top $left $blur $colors
+  text-shadow: $top $left $blur $colors
+
+@mixin text-shadow-blur($blur, $colors)
+  -webkit-text-shadow: 0 1px $blur $colors
+  -moz-text-shadow: 0 1px $blur $colors
+  -ms-text-shadow: 0 1px $blur $colors
+  text-shadow: 0 1px $blur $colors
+
 @mixin long-text-shadow($num, $color1, $color2:$color1)
   -webkit-text-shadow: multiple-text-shadow($num, $color1, $color2)
   -moz-text-shadow: multiple-text-shadow($num, $color1, $color2)
   -ms-text-shadow: multiple-text-shadow($num, $color1, $color2)
   text-shadow: multiple-text-shadow($num, $color1, $color2)
-  
+
 @mixin long-box-shadow($num, $color1, $color2:$color1)
   -webkit-box-shadow: multiple-box-shadow($num, $color1, $color2)
   -moz-box-shadow: multiple-box-shadow($num, $color1, $color2)
   -ms-box-shadow: multiple-box-shadow($num, $color1, $color2)
   box-shadow: multiple-box-shadow($num, $color1, $color2)
-  
-@mixin box-shadow($left, $top, $blur, $colors)
-  -webkit-box-shadow: $left $top $blur $colors
-  -moz-box-shadow: $left $top $blur $colors
-  -ms-box-shadow: $left $top $blur $colors
-  box-shadow: $left $top $blur $colors
-  
-@mixin box-shadow-one-side($left, $top, $blur, $spread, $colors)
-  -webkit-box-shadow: $left $top $blur $spread $colors
-  -moz-box-shadow: $left $top $blur $spread $colors
-  -ms-box-shadow: $left $top $blur $spread $colors
-  box-shadow: $left $top $blur $spread $colors
 
-@mixin inset-box-shadow($left, $top, $blur, $colors)
-  -webkit-box-shadow: inset $left $top $blur $colors
-  -moz-box-shadow: inset $left $top $blur $colors
-  -ms-box-shadow: inset $left $top $blur $colors
-  box-shadow: inset $left $top $blur $colors
-  
+@mixin box-shadow($code)
+  -webkit-box-shadow: $code
+  -moz-box-shadow: $code
+  -ms-box-shadow: $code
+  box-shadow: $code
+
 @mixin sticky-footer($footer-height, $root-selector: unquote(".root"), $root-footer-selector: unquote(".root_footer"), $footer-selector: unquote(".footer"))
   #{$root-selector}
     clear: both
@@ -70,15 +102,35 @@
   background: -moz-linear-gradient(top, $color 0%, transparentize($color, 1) 100%)
   background: -webkit-linear-gradient(top,  $color 0%, transparentize($color, 1) 100%)
   background: linear-gradient(to bottom,  $color 0%, transparentize($color, 1) 100%)
-  
+
 @mixin gradient-fade-reverse($color)
   background: -moz-linear-gradient(top, transparentize($color, 1) 0%, $color 100%)
   background: -webkit-linear-gradient(top, transparentize($color, 1) 0%, $color 100%)
   background: linear-gradient(to bottom,  transparentize($color, 1) 0%, $color 100%)
-  
+
 @mixin alt-font
   font-family: 'Titillium Web', sans-serif
   letter-spacing: -0.01em
-  
+
 @mixin border-left($width, $color)
   border-left: $width solid $color
+
+@mixin placeholder
+  \::-webkit-input-placeholder
+    @content
+  \:-moz-placeholder
+    @content
+  \::-moz-placeholder
+    @content
+  \:-ms-input-placeholder
+    @content
+
+@mixin focus-placeholder
+  \:focus::-webkit-input-placeholder
+    @content
+  \:focus:-moz-placeholder
+    @content
+  \:focus::-moz-placeholder
+    @content
+  \:focus:-ms-input-placeholder
+    @content
