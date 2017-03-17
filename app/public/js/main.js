@@ -230,7 +230,7 @@
     //Hide prev next depending on slide position
 
     function hidePrevOrNext() {
-      if (isSideMenuVisible && winWidth < 768) {
+      if (isSideMenuVisible && winWidth <= 768) {
         $('.carousel-control-prev').hide();
         $('.carousel-control-next').hide();
       } else if ($('.carousel-item').first().hasClass('active')) {
@@ -394,6 +394,10 @@
 
       $('.portfolio-container').scrollTop(0);
       $('.portfolio-bg').css('height', '100%');
+      if (!isSideMenuVisible && winWidth <= 768) {
+        $('#portfolio .brand').show('fade', 300);
+      }
+
       carouselInit();
     });
 

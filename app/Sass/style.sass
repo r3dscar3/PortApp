@@ -105,6 +105,8 @@ label
   .close
     opacity: 1
     color: $brand-inverse
+    margin-top: -10px
+    margin-right: -10px
     @include text-shadow(transparentize($body-bg, 0.6))
 
   h5.titles
@@ -471,7 +473,12 @@ label
     #portfolioCarousel
       .carousel-inner
         .carousel-item
+          &.active
+            &.fixie
+              min-width: 100vw
           .portfolio-container
+            min-width: 55vw
+
             .portfolio-hero
               .jumbotron
                 .container
