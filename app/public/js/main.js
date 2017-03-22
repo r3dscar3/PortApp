@@ -177,7 +177,7 @@
 
       if (winWidth < 768) {
         var caroWidth = portContW * 0.8;
-        var caroHeight = winHeight * 0.8;
+        var caroHeight = winHeight * 0.7;
         $('.portfolio-container').animate({
           width: caroWidth + "px",
           height: caroHeight + "px",
@@ -400,6 +400,44 @@
 
       carouselInit();
     });
+
+    //Conatact Form
+
+    $("#hello").submit(function(e) {
+      var validated = $(".required").val() != "";
+      e.preventDefault();
+      if (validated) {
+        submitForm();
+      } else {
+        $("#formError").removeClass('hidden-xs-up');
+      }
+
+    });
+
+    function submitForm() {
+      // Initiate Variables With Form Content
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var message = $("#message").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/php/form_mailer.php",
+        data: "name=" + name + "&email=" + email + "&message=" + message,
+        success: function(text) {
+          if (text == "success") {
+            formSuccess();
+          } else {
+            alert('error');
+          }
+        }
+      });
+    }
+    function formSuccess() {
+      $("#formError").addClass('hidden-xs-up');
+      $("#contactForm").addClass("hidden-xs-up");
+      $("#formSuccess").removeClass("hidden-xs-up");
+    }
 
   });
 }));

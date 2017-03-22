@@ -8868,7 +8868,7 @@ label {
   .side-menu-contain .close {
     opacity: 1;
     color: #06242f;
-    margin-top: -10px;
+    margin-top: -15px;
     margin-right: -10px;
     -webkit-text-shadow: 0 1px 0 rgba(243, 243, 243, 0.4);
     -moz-text-shadow: 0 1px 0 rgba(243, 243, 243, 0.4);
@@ -9093,7 +9093,8 @@ label {
             opacity: 1 !important; }
           #portfolio #portfolioCarousel .carousel-inner .carousel-item .portfolio-container.fixie {
             z-index: 999;
-            overflow-y: scroll; }
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch; }
             #portfolio #portfolioCarousel .carousel-inner .carousel-item .portfolio-container.fixie .display-4 small {
               opacity: 1 !important; }
           #portfolio #portfolioCarousel .carousel-inner .carousel-item .portfolio-container .portfolio-bg {
@@ -9235,6 +9236,10 @@ label {
       #portfolio #portfolioCarousel .carousel-inner .carousel-item .portfolio-container .portfolio-hero .jumbotron .container .row .display-4 small, #portfolio #portfolioCarousel .carousel-inner .carousel-item .portfolio-container .portfolio-hero .jumbotron .container .row-margin .display-4 small {
         opacity: 1; } }
 @media only screen and (max-width: 575px) {
+  .main-contain {
+    max-height: 100vh;
+    overflow: hidden; }
+
   label,
   .form-control {
     font-size: 1em; }
